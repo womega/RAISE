@@ -23,7 +23,3 @@ RAISE mines a phase-level rule inventory from the same phase corpus it explains.
 ## Important aggregation note
 
 The k-sweep retains only samples/cells with at least k valid units. Consequently, the k=2 row in `k_sweep_overall.csv` is a **budget-sensitivity aggregate** and can differ from the primary k=2 profile in `global_profiles_k2.csv`. The latter is the value to cite for the paper's primary cross-explainer comparison.
-
-## Recommended paper citation sentence
-
-> Extended results and reproducibility artefacts are available at `https://github.com/womega/RAISE`.
