@@ -1,6 +1,6 @@
 regime,explainer,availability_percent,aggregation,scope_note
 Cross,RAISE,99.4,scenario-mean local availability,current paper
-Cross,Anchors,47.5,scenario-mean local availability,current paper; contributes to 22/28 scenarios
+Cross,Anchors,47.5,scenario-mean local availability,current paper
 Cross,SHAP,100,scenario-mean local availability,current paper
 Cross,LIME,100,scenario-mean local availability,current paper
 Cross,RAISE,99.4,pooled sample non-empty rate,extended support table
