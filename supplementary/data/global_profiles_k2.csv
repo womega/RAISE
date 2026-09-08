@@ -1,0 +1,9 @@
+regime,explainer,comprehensiveness_mean,comprehensiveness_sd,sufficiency_mean,sufficiency_sd,keep_damage_mean,keep_damage_sd,remove_damage_mean,remove_damage_sd,remove_fix_mean,remove_fix_sd,scope_note
+Cross,RAISE,0.076,0.105,0.346,0.219,0.151,0.14,0.036,0.087,0.047,0.092,paper primary k=2
+Cross,Anchors,0.154,0.149,0.155,0.194,0.148,0.249,0.153,0.252,0.213,0.284,paper primary k=2; conditional on availability
+Cross,SHAP,0.124,0.176,0.508,0.204,0.268,0.11,0.054,0.1,0.082,0.124,paper primary k=2
+Cross,LIME,0.264,0.193,0.265,0.235,0.148,0.155,0.119,0.098,0.159,0.133,paper primary k=2
+Intra,RAISE,0.475,0.11,0.487,0.082,0.156,0.089,0.082,0.088,0.396,0.13,"extended profile"
+Intra,Anchors,0.268,0.154,0.233,0.159,0.196,0.345,0.017,0.038,0.559,0.237,extended profile
+Intra,SHAP,0.064,0.103,0.475,0.1,0.443,0.135,0.061,0.094,0.012,0.053,extended profile
+Intra,LIME,0.357,0.129,0.209,0.143,0.201,0.151,0.338,0.141,0.02,0.057,extended profile

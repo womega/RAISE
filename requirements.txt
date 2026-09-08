@@ -1,0 +1,3 @@
+# Convenience runtime requirements for source checkouts.
+# pyproject.toml is the authoritative package metadata.
+scipy>=1.10,<2

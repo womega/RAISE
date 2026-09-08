@@ -1,0 +1,38 @@
+cff-version: 1.2.0
+message: "If you use RAISE, please cite the reference paper."
+title: "RAISE"
+type: software
+version: 0.1.0
+authors:
+  - family-names: Mvula
+    given-names: Paul K.
+    orcid: "https://orcid.org/0000-0003-4146-6993"
+  - family-names: Branco
+    given-names: Paula
+    orcid: "https://orcid.org/0000-0002-9917-3694"
+  - family-names: Jourdan
+    given-names: Guy-Vincent
+    orcid: "https://orcid.org/0000-0001-6067-6545"
+  - family-names: Onut
+    given-names: Iosif-Viorel
+    orcid: "https://orcid.org/0009-0008-6770-6709"
+  - family-names: Viktor
+    given-names: Herna L.
+    orcid: "https://orcid.org/0000-0003-1914-5077"
+repository-code: "https://github.com/womega/RAISE"
+preferred-citation:
+  type: conference-paper
+  title: "RAISE: Tokenizer-Aware Rule-Based Explanations for Transformer Log Anomaly Detection"
+  authors:
+    - family-names: Mvula
+      given-names: Paul K.
+    - family-names: Branco
+      given-names: Paula
+    - family-names: Jourdan
+      given-names: Guy-Vincent
+    - family-names: Onut
+      given-names: Iosif-Viorel
+    - family-names: Viktor
+      given-names: Herna L.
+  conference:
+    name: "18th International Conference on Knowledge Discovery and Information Retrieval"

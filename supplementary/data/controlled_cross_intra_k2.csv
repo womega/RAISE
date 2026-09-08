@@ -1,0 +1,4 @@
+explainer,cross_comprehensiveness,intra_comprehensiveness,delta_comprehensiveness,cross_sufficiency,intra_sufficiency,delta_sufficiency,delta_keep_flip,delta_remove_flip
+RAISE,-0.039,0.064,0.103,-0.388,0.093,0.481,-0.185,0.017
+LIME,-0.036,0.141,0.177,-0.172,-0.007,0.166,-0.099,-0.078
+SHAP,-0.19,0.097,0.286,-0.009,0.101,0.11,-0.005,-0.125

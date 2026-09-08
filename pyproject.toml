@@ -1,0 +1,74 @@
+[build-system]
+requires = ["hatchling>=1.27"]
+build-backend = "hatchling.build"
+
+[project]
+name = "raise-xai"
+dynamic = ["version"]
+description = "Tokenizer-aware rule-based explanations for discrete model behaviour"
+readme = "README.md"
+license = "MIT"
+license-files = ["LICENSE"]
+requires-python = ">=3.10"
+authors = [
+  {name = "Paul K. Mvula"},
+  {name = "Paula Branco"},
+  {name = "Guy-Vincent Jourdan"},
+  {name = "Iosif-Viorel Onut"},
+  {name = "Herna L. Viktor"},
+]
+keywords = [
+  "explainable-ai",
+  "xai",
+  "association-rules",
+  "transformers",
+  "log-anomaly-detection",
+  "cybersecurity",
+]
+classifiers = [
+  "Development Status :: 3 - Alpha",
+  "Intended Audience :: Science/Research",
+  "Intended Audience :: Developers",
+  "Programming Language :: Python :: 3",
+  "Programming Language :: Python :: 3 :: Only",
+  "Programming Language :: Python :: 3.10",
+  "Programming Language :: Python :: 3.11",
+  "Programming Language :: Python :: 3.12",
+  "Programming Language :: Python :: 3.13",
+  "Programming Language :: Python :: 3.14",
+  "Topic :: Scientific/Engineering :: Artificial Intelligence",
+  "Topic :: Security",
+]
+dependencies = [
+  "scipy>=1.10,<2",
+]
+
+[project.optional-dependencies]
+dev = [
+  "build>=1.2",
+  "pytest>=8.0",
+  "ruff>=0.12",
+]
+
+[project.urls]
+Homepage = "https://github.com/womega/RAISE"
+Repository = "https://github.com/womega/RAISE"
+Issues = "https://github.com/womega/RAISE/issues"
+
+[tool.hatch.version]
+path = "src/raise_xai/__about__.py"
+
+[tool.hatch.build.targets.wheel]
+packages = ["src/raise_xai"]
+
+[tool.pytest.ini_options]
+addopts = "-ra"
+testpaths = ["tests"]
+
+[tool.ruff]
+target-version = "py310"
+line-length = 100
+
+[tool.ruff.lint]
+select = ["E", "F", "I", "B", "UP"]
+ignore = ["E501"]
