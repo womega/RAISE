@@ -156,7 +156,6 @@ src/raise_xai/       installable Python package
 tests/               unit and smoke tests
 examples/            runnable examples
 docs/                method, protocol, reproducibility, and release notes
-paper/               paper source and bibliography
 supplementary/       extended results omitted from the short paper
 .github/             CI, PyPI release workflow, and Dependabot
 Makefile             local development/CI command entry points
