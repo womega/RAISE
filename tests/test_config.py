@@ -1,3 +1,5 @@
+from importlib.metadata import version
+
 import pytest
 
 from raise_xai import validate_raise_cfg
@@ -17,4 +19,4 @@ def test_invalid_threshold_fails():
 def test_version_is_exposed():
     import raise_xai
 
-    assert raise_xai.__version__ == "0.1.0"
+    assert raise_xai.__version__ == version("raise-xai")
