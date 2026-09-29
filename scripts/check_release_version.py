@@ -18,7 +18,10 @@ def read_package_version(version_file: Path) -> str:
 
     for node in tree.body:
         if isinstance(node, ast.Assign):
-            if any(isinstance(target, ast.Name) and target.id == "__version__" for target in node.targets):
+            if any(
+                isinstance(target, ast.Name) and target.id == "__version__"
+                for target in node.targets
+            ):
                 assignments.append(node.value)
         elif (
             isinstance(node, ast.AnnAssign)
