@@ -30,11 +30,27 @@ RAISE is a **descriptive post-hoc explainer**. Masking-based tests used in the p
 
 ### PyPI
 
-Once a release is published:
+Requires Python 3.10 or newer. Install a published release with:
 
 ```bash
-pip install raise-xai
+python -m pip install raise-xai
 ```
+
+The distribution name is `raise-xai`; the Python import name is `raise_xai`:
+
+```python
+from raise_xai import RAISEExplainer
+```
+
+Check the installed version with:
+
+```bash
+python -c "from importlib.metadata import version; print(version('raise-xai'))"
+```
+
+Published versions appear on [PyPI](https://pypi.org/project/raise-xai/). Until the
+first upload succeeds, use the source installation below. The package includes
+the explainer, not trained transformer detectors or the full paper evaluation pipeline.
 
 ### From source
 
@@ -194,6 +210,13 @@ ruff format --check .
 pytest
 python -m build
 ```
+
+## Publishing releases
+
+Maintainers: follow the [PyPI release guide](https://github.com/womega/RAISE/blob/main/docs/publishing.md)
+for the Trusted Publisher configuration, first upload, verification, and later releases.
+Publishing a GitHub release triggers the upload. Manual workflow runs validate and
+build the package without publishing it.
 
 ## Citation
 
