@@ -17,6 +17,14 @@ The workflow is `.github/workflows/release.yml`; the PyPI form takes only its fi
 The workflow's display name is **Publish to PyPI**. The publish job requests
 `id-token: write` and uses `pypa/gh-action-pypi-publish@release/v1`.
 
+On release-triggered runs, the build job first executes
+`scripts/check_release_version.py`. The release tag is passed through an environment
+variable rather than interpolated into shell source, and the guard requires an exact
+`v<package-version>` match with the single literal `__version__` assignment in
+`src/raise_xai/__about__.py`. A mismatch fails before checks, distribution building,
+artifact upload, or PyPI publishing. Pull-request and manual-dispatch runs skip the
+release-only guard, while the normal test suite exercises the guard itself.
+
 For the first upload, configure a pending publisher in PyPI account settings under
 Publishing. A pending publisher creates the project on first use and then becomes
 an ordinary project publisher. It does not reserve the project name. If the pending
@@ -49,8 +57,9 @@ version published on PyPI; publishing `0.1.0` there first is not required.
    Do not select the existing `v0.1.0` tag.
 6. Use the title **RAISE v0.1.1**, describe the package and CI fixes from the changelog,
    and click **Publish release** when ready. Saving a draft does not publish to PyPI.
-7. Open the new release-triggered **Publish to PyPI** run. The `build` job runs
-   checks, builds the sdist and wheel, tests the installed wheel, and uploads artifacts.
+7. Open the new release-triggered **Publish to PyPI** run. The `build` job first verifies
+   that the release tag matches the package version, then runs checks, builds the sdist
+   and wheel, tests the installed wheel, and uploads artifacts.
 8. If configured, approve the `pypi` environment deployment under **Review deployments**.
 9. The `publish` job downloads those artifacts and uploads them to production PyPI.
    Wait for that job to succeed before announcing pip installation availability.
@@ -88,8 +97,10 @@ with `python -m pip install --upgrade raise-xai`. Python imports use `raise_xai`
 
 Update `src/raise_xai/__about__.py`, `CITATION.cff`, and `CHANGELOG.md` in a PR.
 After merging and passing CI, publish a new GitHub release with a matching tag
-(for example, package version `0.1.2` and tag `v0.1.2`). Keep the same publisher
-configuration. Never move an existing release tag or attempt to replace uploaded files.
+(for example, package version `0.1.2` and tag `v0.1.2`). The release workflow will
+reject a mismatched or malformed tag before building or publishing distributions.
+Keep the same publisher configuration. Never move an existing release tag or attempt
+to replace uploaded files.
 
 The README is embedded in each built distribution. Changes on GitHub do not change
 the long description of an already-uploaded release; include them in a new version.
@@ -98,6 +109,7 @@ the long description of an already-uploaded release; include them in a new versi
 
 | Symptom | Check |
 | --- | --- |
+| Release-version guard fails | Confirm the release tag is exactly `v` plus the value in `src/raise_xai/__about__.py` (for example, `v0.1.2` for `__version__ = "0.1.2"`). Prepare the version bump before creating the release tag. |
 | `publish` skipped | Expected for PRs and manual dispatch. Use a newly published GitHub release to upload. |
 | Waiting for approval | Approve the `pypi` deployment if required reviewers are enabled. |
 | Environment rejects the ref | Ensure the environment allows **Tag** pattern `v*`, not only branch `main`. |
