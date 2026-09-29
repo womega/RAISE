@@ -14,7 +14,7 @@ help:
 	  '  make test         Run the test suite' \
 	  '  make build        Build sdist and wheel' \
 	  '  make check        Run lint, format-check, and tests' \
-	  '  make ci           Run all local CI checks including build' \
+	  '  make ci           Install development dependencies, then run checks and build' \
 	  '  make clean        Remove generated Python/build artifacts'
 
 venv:
@@ -46,7 +46,10 @@ build:
 
 check: lint format-check test
 
-ci: check build
+# Keep bootstrap ahead of checks even when callers use make -j.
+ci: install-dev
+	$(MAKE) check
+	$(MAKE) build
 
 clean:
 	rm -rf build dist .pytest_cache .ruff_cache .mypy_cache htmlcov .coverage
