@@ -34,5 +34,13 @@ preferred-citation:
       given-names: Iosif-Viorel
     - family-names: Viktor
       given-names: Herna L.
+  year: 2026
   conference:
     name: "18th International Conference on Knowledge Discovery and Information Retrieval"
+  collection-title: "Proceedings of the 18th International Joint Conference on Knowledge Discovery, Knowledge Engineering and Knowledge Management - Volume 1"
+  collection-type: proceedings
+  isbn: "978-989-758-868-6"
+  issn: "2184-3228"
+  start: 323
+  end: 334
+  notes: "Accepted for publication; forthcoming."
